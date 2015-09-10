@@ -4,11 +4,16 @@ layout: default
 
 # Mi a Point Cloud Library?
 
+
 # PCL telepítése - Windows
+
 
 ## 1. Git repository leszedése
 `https://github.com/PointCloudLibrary/pcl.git`
+
+
 ## 2. Visual Studio 2010 telepítése
+
 
 ## 3. Függőségek telepítése
 
