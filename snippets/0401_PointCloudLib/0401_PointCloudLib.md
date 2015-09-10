@@ -23,12 +23,14 @@ layout: default
 - Sensor-Win-OpenSource64-5.1.0.msi
 
 ## 4. CMake
+
 - Forrás és cél könyvtár beállítása, VS 2010 x64 kiválasztása
 - Configure, ha kell, paraméterek módosítása, újra Configure
 - Generate
 - Előállt a VS2010 Solution a fordításhoz
 
 ## 5. Boost függőségek javítása
+
 - Az egyik boost lib hiányzik a linkelés beállításainál, ezt kézzel lehet pótolni a projektek beállításainál egyenként, vagy csoportos cserével, pl. Notepad++-szal:
 - Csere a *.vcxproj fájlokban:
 
@@ -49,13 +51,15 @@ csere:
     C:\Program Files\Boost\lib\libboost_iostreams-vc100-mt-1_50.lib;C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-1_50.lib
 
 ## 6. Fordítás
+
 - VS 2010 fordítja a solution-t (debug / release!). Ez több órán át is tarthat. A függőségek hiányzó pdb-ire vonatkozó figyelmeztetések normálisak.
 
 ## 7. Saját alkalmazás létrehozása
-- "CMakeLists.txt" létrehozása (pl. pclproject/src-ben):
+
+"CMakeLists.txt" létrehozása (pl. pclproject/src-ben):
 
     cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-    project(<PROJEKTNÉV>)
+	project(<PROJEKTNÉV>)
     find_package(PCL 1.2 REQUIRED)
     include_directories(${PCL_INCLUDE_DIRS})
     link_directories(${PCL_LIBRARY_DIRS})
@@ -67,12 +71,11 @@ csere:
 
 - Elkészült solution megnyitása VS2010-ben
 
-- Project/Properties/Linker/Input/Additional Dependencies: fel kell venni a chrono függőséget:
+Project/Properties/Linker/Input/Additional Dependencies: fel kell venni a chrono függőséget:
 
     Debug:
 	C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-gd-1_50.lib
 	Release:
 	C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-1_50.lib
-
 
 <small>Szerzők, verziók: Kovács Viktor</small>
