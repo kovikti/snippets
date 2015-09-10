@@ -52,7 +52,7 @@ csere:
 - VS 2010 fordítja a solution-t (debug / release!). Ez több órán át is tarthat. A függőségek hiányzó pdb-ire vonatkozó figyelmeztetések normálisak.
 
 ## 7. Saját alkalmazás létrehozása
--"CMakeLists.txt" létrehozása (pl. pclproject/src-ben):
+- "CMakeLists.txt" létrehozása (pl. pclproject/src-ben):
 
     cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
     project(<PROJEKTNÉV>)
@@ -63,11 +63,11 @@ csere:
     add_executable (<PROJEKTNÉV> <PROJEKTNÉV>.cpp <PROJEKTNÉV>.h)
     target_link_libraries(<PROJEKTNÉV> ${PCL_LIBRARIES})
 
--CMake indítás, forrás (src) könyvtár megadása, cél (pl. pclproject/build) megadása, Configure, [paraméterek módosítása], Configure, Generate
+- CMake indítás, forrás (src) könyvtár megadása, cél (pl. pclproject/build) megadása, Configure, [paraméterek módosítása], Configure, Generate
 
--Elkészült solution megnyitása VS2010-ben
+- Elkészült solution megnyitása VS2010-ben
 
--Project/Properties/Linker/Input/Additional Dependencies: fel kell venni a chrono függőséget:
+- Project/Properties/Linker/Input/Additional Dependencies: fel kell venni a chrono függőséget:
 
     Debug:
 	C:\Program Files\Boost\lib\libboost_chrono-vc100-mt-gd-1_50.lib
